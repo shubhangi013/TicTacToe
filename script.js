@@ -1,39 +1,40 @@
 let mode, mark, circleTurn,currentClass,whoStarts;
-const WINNING_COMBINATIONS=[
-    [0,1,2],
-    [3,4,5],
-    [6,7,8],
-    [0,3,6],
-    [1,4,7],
-    [2,5,8],
-    [0,4,8],
-    [2,4,6],
-]
 
-const X_Class='X';
-const O_Class='O';
-
-const cellElements= document.querySelectorAll('[cells]');
-const board= document.getElementById('board')
-const winningMessageElement=document.getElementById('wonMessage')
-const winningMessageText=document.querySelector('[winningMessage]');
-const restartButton= document.getElementById('restartBtn');
-const singleButton= document.getElementById('singleBtn')
-const BotOrHuman= document.getElementById('botOrHuman');
 
 
 
 function options(){
     if (document.getElementById('single').checked) {
         mode = "single";
+        if((document.getElementById('beatrice').checked==false)&&(document.getElementById('human').checked==false))
+        {
+            alert("Select who'll start first please!")
+            location.reload();
+
+        }
         
 
     }
     else if (document.getElementById('multiple').checked) {
         // console.log("multiple")
         mode = "multiplayer";
+        if(document.getElementById('beatrice').checked)
+        { alert("Hey! you can't play with Beatrice if you have someone else")
+        document.getElementById('beatrice').checked=false;
+        location.reload();
+        
+    }
+        else if(document.getElementById('human').checked)
+        { alert("Hey! you can't play with Beatrice if you have someone else")
+        document.getElementById('human').checked=false;
+        location.reload();
+    }
 
     }
+    else{alert("HEY! select a mode please")
+    location.reload();
+
+}
 
     if (document.getElementById('markedX').checked) {
         mark = "cross";
@@ -45,13 +46,14 @@ function options(){
         // circleTurn=true;
 
     }
+    else{alert("HEY! select a mark please")
+    location.reload();}
     if(document.getElementById('beatrice').checked){
         whoStarts="beatrice";
     }
     else if(document.getElementById('human').checked){
         whoStarts="human";
     }
-   
     if (mark != null && mode != null)
     if (mode === 'multiplayer')
         multiPlayer();
@@ -66,7 +68,28 @@ function options(){
 
 
 function multiPlayer(){
-
+    const WINNING_COMBINATIONS=[
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+        [0,4,8],
+        [2,4,6],
+    ]
+    
+    const X_Class='X';
+    const O_Class='O';
+    
+    const cellElements= document.querySelectorAll('[cells]');
+    const board= document.getElementById('board')
+    const winningMessageElement=document.getElementById('wonMessage')
+    const winningMessageText=document.querySelector('[winningMessage]');
+    const restartButton= document.getElementById('restartBtn');
+    const singleButton= document.getElementById('singleBtn')
+    const BotOrHuman= document.getElementById('botOrHuman');
+    
 
 
 if(mark=="cross")
@@ -85,6 +108,14 @@ if(mark=="cross")
     })
 
     winningMessageElement.classList.remove('show')
+    document.getElementById('beatrice').checked = false;
+    document.getElementById('human').checked = false;
+    document.getElementById('single').checked = false;
+    document.getElementById('multiple').checked = false;
+    document.getElementById('markedO').checked = false;
+    document.getElementById('markedX').checked = false;
+    location.reload();
+
   }
 restartButton.addEventListener('click', startGame)
 function boxClick(e){
@@ -143,6 +174,28 @@ function isDraw() {
 }
 
 function singlePlayer(){
+    const WINNING_COMBINATIONS=[
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+        [0,4,8],
+        [2,4,6],
+    ]
+    
+    const X_Class='X';
+    const O_Class='O';
+    
+    const cellElements= document.querySelectorAll('[cells]');
+    const board= document.getElementById('board')
+    const winningMessageElement=document.getElementById('wonMessage')
+    const winningMessageText=document.querySelector('[winningMessage]');
+    const restartButton= document.getElementById('restartBtn');
+    const singleButton= document.getElementById('singleBtn')
+    const BotOrHuman= document.getElementById('botOrHuman');
+    
 
     function startGame() {
         // circleTurn = false
@@ -155,11 +208,13 @@ function singlePlayer(){
         })
     
         winningMessageElement.classList.remove('show')
+        location.reload();
+
       }
     restartButton.addEventListener('click', startGame)
     const marked= document.getElementById('1');
 if(whoStarts==="beatrice"){
-if(mark=="cross")
+if(mark==="cross")
 { currentClass=X_Class
     marked.classList.add(O_Class)
 
@@ -171,7 +226,7 @@ if(mark=="cross")
 }
 else if(whoStarts==="human")
 {
-    if(mark=="cross")
+    if(mark==="cross")
 { currentClass=X_Class
 
 }
