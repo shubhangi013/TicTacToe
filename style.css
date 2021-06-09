@@ -1,0 +1,225 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+.heading{
+    
+    font-size: 6rem;
+    color: white;
+    text-align: center;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
+}
+:root{
+
+    --cell-size: 100px;
+    --mark-size: calc(var(--cell-size)*0.7);
+}
+body{
+    margin: 0;
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0a0710;
+    /* display: flex; */
+    
+}
+.board{
+    width: 90vh;
+    height: 90vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3,auto);
+    margin-left: 450px;
+   
+    /* margin-right: 400px; */
+
+
+}
+
+
+.cell{
+    justify-content: center;
+    width: var(--cell-size);
+    height:var(--cell-size);
+    border: 2px solid #4c3c77;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color:#130f1e ;
+
+}
+ 
+.cell.X::before,
+.cell.X::after{
+    content: '';
+    width: calc(var(--mark-size)*.15);
+    height: var(--mark-size);
+    background-color: #ffcc66;
+    position: absolute;
+}
+.cell.X::before{
+    transform: rotate(45deg);
+} 
+.cell.X::after{
+    transform: rotate(-45deg);
+} 
+.cell.O::before,
+.cell.O::after{
+    content: '';
+    border-radius: 50%;
+
+    position: absolute;
+    
+}
+.cell.O::before{
+    width: var(--mark-size);
+    height: var(--mark-size);
+    background-color: #ffcc99;
+}
+.cell.O::after{
+    width: calc(var(--mark-size)*0.75);
+    height: calc(var(--mark-size)*0.75);
+    background-color:#130f1e;
+}
+.cell.X,
+.cell.O{
+    cursor: not-allowed;
+}
+.restartBtn {
+	background-color:#44c767;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:21px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.restartBtn:hover {
+	background-color:#33571f;
+}
+.restartBtn:active {
+	position:relative;
+	top:1px;
+}
+
+.won{
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    background-color: rgba(0, 0,0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: wheat;
+    font-size: 5rem;
+    flex-direction: column;
+    display: none;
+
+}
+.won.show{
+    display: flex;
+}
+.selections{
+ 
+  align-content: center;
+  /* margin-left: 200px; */
+
+}
+.form{
+    align-content: center;
+    
+}
+.text{
+    color: #ffcc99;
+    text-align: center;
+    
+}
+.startBtn {
+	background-color:#44c767;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:21px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+    justify-content: center;
+        align-items: center;
+        position: relative;
+        padding-right: 50px;
+   
+    
+
+}
+.startBtn:hover {
+	background-color:#33571f;
+}
+.startBtn:active {
+	position:center;
+	top:1px;
+}
+
+@media only screen and (max-width: 600px) {
+     .complete{
+        display: flex;
+        flex-direction: column;
+    }
+    form{
+        
+        justify-content: center;
+        align-items: center;
+
+    }
+    
+    .board{
+        width: 30vh;
+    height: 30vh;
+    margin-left: 80px;
+    margin-top: 50px;
+    margin-bottom: 0;
+    }
+    .text{
+        
+        font-size: 1rem;
+    }
+    :root{
+        --cell-size:77px;
+    }
+    body{
+        position: relative;
+    }
+    .heading{
+        font-size: 3rem;
+    }
+    .startBtn,.restartBtn{
+        padding: 5px 10px;
+    }
+
+  }
+.botOrHuman{
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    background-color: rgba(0, 0,0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: wheat;
+    font-size: 5rem;
+    flex-direction: column;
+    display: none;
+}
+  .botOrHuman.show{
+    display: flex;
+
+  }

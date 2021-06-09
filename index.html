@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0gid /js/materialize.min.js"></script>
+
+            
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    
+
+<h1 class="heading">Tic Tac Toe!</h1> 
+<!-- <div class="complete"></div> -->
+
+<div class="startOptions">
+<div class="selections">
+    <form action="#" >
+        <p>
+            <h4 class="text">Select the mode you'd like to play in </h4>
+          <label>
+            <input name="group1" type="radio" id='single' />
+            <span>Single (against the Bot Beatrice Prior !)</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="group1" type="radio" id='multiple'/>
+            <span>Multiplayer</span>
+          </label>
+        </p>
+       
+        </form>
+        <form action="#">
+            <p>
+            <h4 class="text">Select what you'd like to mark first! </h4>
+          <label>
+            <input class="with-gap" name="group1" type="radio" id='markedX' />
+            <span>X</span>
+          </label>
+        </p>
+        <p>
+            <label>
+                <input class="with-gap" name="group1" type="radio" id='markedO' />
+                <span>O</span>
+              </label>
+        </p>
+      </form>
+
+        <form action="#">
+          <p>
+          <h4 class="text">If you wanna go solo..who'd you want should make the first move? ;)  </h4>
+        <label>
+          <input class="with-gap" name="group1" type="radio" id='beatrice' />
+          <span>ME!( Beatrice Prior )</span>
+        </label>
+      </p>
+      <p>
+          <label>
+              <input class="with-gap" name="group1" type="radio" id='human' />
+              <span>YOU!!</span>
+            </label>
+      </p>
+      
+      
+      </form>
+   
+  
+      </div>
+      <div class="start">
+      <button id="startBtn " class="startBtn" onclick="options()" >CLICK HERE TO START! all the best!</button>
+      
+
+</div>
+</div>
+
+  
+
+    
+    <div class="board" id="board">
+        <div class="cell" id="0" cells></div>
+        <div class="cell" id="1" cells></div>
+        <div class="cell" id="2" cells></div>
+        <div class="cell" id="3" cells></div>
+        <div class="cell" id="4" cells></div>
+        <div class="cell" id="5" cells></div>
+        <div class="cell" id="6" cells></div>
+        <div class="cell" id="7" cells></div>
+        <div class="cell" id="8" cells></div>
+    </div>
+    <div class="won" id="wonMessage">
+        <div winningMessage></div>
+        <button id="restartBtn" class="restartBtn">PLAY AGAIN!!</button>
+    </div>
+    
+
+
+    
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
