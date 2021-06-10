@@ -1,4 +1,25 @@
 let mode, mark, circleTurn,currentClass,whoStarts;
+const WINNING_COMBINATIONS=[
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6],
+]
+
+const X_Class='X';
+const O_Class='O';
+
+const cellElements= document.querySelectorAll('[cells]');
+const board= document.getElementById('board')
+const winningMessageElement=document.getElementById('wonMessage')
+const winningMessageText=document.querySelector('[winningMessage]');
+const restartButton= document.getElementById('restartBtn');
+const singleButton= document.getElementById('singleBtn')
+const BotOrHuman= document.getElementById('botOrHuman');
 
 
 
@@ -68,30 +89,7 @@ function options(){
 
 
 function multiPlayer(){
-    const WINNING_COMBINATIONS=[
-        [0,1,2],
-        [3,4,5],
-        [6,7,8],
-        [0,3,6],
-        [1,4,7],
-        [2,5,8],
-        [0,4,8],
-        [2,4,6],
-    ]
-    
-    const X_Class='X';
-    const O_Class='O';
-    
-    const cellElements= document.querySelectorAll('[cells]');
-    const board= document.getElementById('board')
-    const winningMessageElement=document.getElementById('wonMessage')
-    const winningMessageText=document.querySelector('[winningMessage]');
-    const restartButton= document.getElementById('restartBtn');
-    const singleButton= document.getElementById('singleBtn')
-    const BotOrHuman= document.getElementById('botOrHuman');
-    
-
-
+ 
 if(mark=="cross")
 { circleTurn=false}
  else
@@ -174,28 +172,6 @@ function isDraw() {
 }
 
 function singlePlayer(){
-    const WINNING_COMBINATIONS=[
-        [0,1,2],
-        [3,4,5],
-        [6,7,8],
-        [0,3,6],
-        [1,4,7],
-        [2,5,8],
-        [0,4,8],
-        [2,4,6],
-    ]
-    
-    const X_Class='X';
-    const O_Class='O';
-    
-    const cellElements= document.querySelectorAll('[cells]');
-    const board= document.getElementById('board')
-    const winningMessageElement=document.getElementById('wonMessage')
-    const winningMessageText=document.querySelector('[winningMessage]');
-    const restartButton= document.getElementById('restartBtn');
-    const singleButton= document.getElementById('singleBtn')
-    const BotOrHuman= document.getElementById('botOrHuman');
-    
 
     function startGame() {
         // circleTurn = false
@@ -260,7 +236,6 @@ function swapTurns(){
 }
 
 
-//minimax
 
 function botMark(currentClass) {
     let bestScore = -Infinity;

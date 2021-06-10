@@ -97,6 +97,7 @@ body{
 	padding:16px 31px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #2f6627;
+    font-family: 'Montserrat', sans-serif;
 }
 .restartBtn:hover {
 	background-color:#33571f;
@@ -140,33 +141,33 @@ body{
     text-align: center;
     
 }
-.startBtn {
-	background-color:#44c767;
+button {
+	background-color:#564488;
 	border-radius:28px;
-	border:1px solid #18ab29;
+	border:1px solid #564488;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
 	font-size:21px;
 	padding:16px 31px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
+	text-shadow:0px 1px 0px #564488;
     justify-content: center;
         align-items: center;
         position: relative;
         padding-right: 50px;
+        font-family: 'Montserrat', sans-serif;
    
     
 
 }
-.startBtn:hover {
-	background-color:#33571f;
+button:hover {
+	background-color:#b58db5;
 }
-.startBtn:active {
+button:active {
 	position:center;
 	top:1px;
-}
-
+} 
 @media only screen and (max-width: 600px) {
      .complete{
         display: flex;
@@ -204,22 +205,4 @@ body{
     }
 
   }
-.botOrHuman{
-    position: fixed;
-    top:0;
-    left:0;
-    right:0;
-    bottom: 0;
-    background-color: rgba(0, 0,0, 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: wheat;
-    font-size: 5rem;
-    flex-direction: column;
-    display: none;
-}
-  .botOrHuman.show{
-    display: flex;
 
-  }
