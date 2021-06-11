@@ -203,6 +203,9 @@ button:active {
     .startBtn,.restartBtn{
         padding: 5px 10px;
     }
+    .winningMessage{
+        font-size: 2rem;
+    }
 
   }
 
